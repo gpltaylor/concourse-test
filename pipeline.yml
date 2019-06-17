@@ -3,8 +3,8 @@ resources:
   - name: dowork-resources
     type: git
     source:
-      uri: /c/Users/gtaylor/Documents/concourse/test-project
-      branch: develop
+      uri: https://github.com/gpltaylor/concourse-test.git
+      branch: master
 
 jobs:
   - name: job-do-work
