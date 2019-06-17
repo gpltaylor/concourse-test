@@ -1,0 +1,20 @@
+---
+resources:
+  - name: dowork-resources
+    type: git
+    source:
+      uri: /c/Users/gtaylor/Documents/concourse/test-project
+      branch: develop
+
+jobs:
+  - name: job-do-work
+    serial: true
+    plan:
+      - get: dowork-resources
+      - task: bump-timestamp-file
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+          run:
+            path: dowork-resources/dowork.sh
